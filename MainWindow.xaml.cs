@@ -19,9 +19,9 @@ namespace Krestiki_noliki
 {
     public partial class MainWindow : Window
     {
-        private enum Player { None, X, O }
+        private enum Player { None, 口, 人 }
 
-        private Player currentPlayer = Player.X;
+        private Player currentPlayer = Player.口;
         private int scoreX = 0;
         private int scoreO = 0;
 
@@ -41,7 +41,7 @@ namespace Krestiki_noliki
 
                 if (CheckForWin())
                 {
-                    if (currentPlayer == Player.X)
+                    if (currentPlayer == Player.口)
                         scoreX++;
                     else
                         scoreO++;
@@ -60,7 +60,7 @@ namespace Krestiki_noliki
                 }
                 else
                 {
-                    currentPlayer = currentPlayer == Player.X ? Player.O : Player.X;
+                    currentPlayer = currentPlayer == Player.口 ? Player.人 : Player.口;
                 }
             }
         }
@@ -128,7 +128,7 @@ namespace Krestiki_noliki
                 button.IsEnabled = true;
             }
 
-            currentPlayer = Player.X;
+            currentPlayer = Player.口;
         }
     }
 }
